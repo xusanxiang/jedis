@@ -91,6 +91,10 @@ public interface BinaryRedisPipeline {
 
   Response<Long> move(byte[] key, int dbIndex);
 
+  Response<String> opstock(String... string);
+
+  Response<byte[]> opstock(byte[]... field);
+
   Response<Long> persist(byte[] key);
 
   Response<byte[]> rpop(byte[] key);

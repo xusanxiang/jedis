@@ -96,6 +96,8 @@ public interface JedisCommands {
 
   Map<String, String> hgetAll(String key);
 
+  String opstock(String... string);
+
   Long rpush(String key, String... string);
 
   Long lpush(String key, String... string);

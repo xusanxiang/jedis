@@ -117,6 +117,8 @@ public interface Commands {
 
   public void lpop(final String key);
 
+  public void opstock(final String... string);
+
   public void rpop(final String key);
 
   public void rpoplpush(final String srckey, final String dstkey);

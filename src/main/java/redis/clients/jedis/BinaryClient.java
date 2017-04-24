@@ -317,6 +317,10 @@ public class BinaryClient extends Connection {
     sendCommand(LPOP, key);
   }
 
+  public void opstock(final byte[]... fields){
+    sendCommand(OPSTOCK, fields);
+  }
+
   public void rpop(final byte[] key) {
     sendCommand(RPOP, key);
   }

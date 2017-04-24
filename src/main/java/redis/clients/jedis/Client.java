@@ -207,6 +207,15 @@ public class Client extends BinaryClient implements Commands {
     hgetAll(SafeEncoder.encode(key));
   }
 
+  @Override
+  public void opstock(String... fields) {
+    final byte[][] bfields = new byte[fields.length][];
+    for (int i = 0; i < bfields.length; i++) {
+      bfields[i] = SafeEncoder.encode(fields[i]);
+    }
+    opstock(bfields);
+  }
+
   public void rpush(final String key, final String... string) {
     rpush(SafeEncoder.encode(key), SafeEncoder.encodeMany(string));
   }

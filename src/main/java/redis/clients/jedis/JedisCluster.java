@@ -503,6 +503,16 @@ public class JedisCluster extends BinaryJedisCluster implements JedisCommands,
   }
 
   @Override
+  public String opstock(final String... string) {
+    return new JedisClusterCommand<String>(connectionHandler, maxAttempts) {
+      @Override
+      public String execute(Jedis connection) {
+        return connection.opstock(string);
+      }
+    }.run(string[0]);
+  }
+
+  @Override
   public Long rpush(final String key, final String... string) {
     return new JedisClusterCommand<Long>(connectionHandler, maxAttempts) {
       @Override

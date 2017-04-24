@@ -797,6 +797,17 @@ public class Jedis extends BinaryJedis implements JedisCommands, MultiKeyCommand
   }
 
   /**
+   * 扣除库存并写流水
+   * @param strings
+   * @return
+   */
+  public String opstock(String... strings){
+    checkIsInMultiOrPipeline();
+    client.opstock(strings);
+    return client.getBulkReply();
+  }
+
+  /**
    * Add the string value to the head (LPUSH) or tail (RPUSH) of the list stored at key. If the key
    * does not exist an empty list is created just before the append operation. If the key exists but
    * is not a List an error is returned.
