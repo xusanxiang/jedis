@@ -119,7 +119,7 @@
 				<version>2.9.1</version>
 				<configuration>
 					<aggregate>true</aggregate>
-					<additionalparam>-Xdoclint:none</additionalparam>
+					<!--<additionalparam>-Xdoclint:none</additionalparam>-->
 				</configuration>
                                 <executions>
                                     <execution>
